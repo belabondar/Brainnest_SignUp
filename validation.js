@@ -21,15 +21,26 @@ function validateName(label) {
   const error = label.querySelector("div");
   const input = label.querySelector("input");
 
+  //TODO: smarter way of checking for special characters
+  const specialChars = /[?#*!"§$%&/()=,:;_-][1-9]/
+
   const isValid = input.value.length > 0;
+  const hasSpecialChars = !(specialChars.test(input.value));
   if (!isValid) {
     showError(error, input, "Please enter a name");
+  } else if (hasSpecialChars) {
+    showError(error, input, "Name cannot contain special characters or numbers");
   }
+  
 }
 
 function validateEmail(label) {
   const error = label.querySelector("div");
   const input = label.querySelector("input");
+
+
+  //convert the input into all lowercase
+  input.value = input.value.toLowerCase();
 
   //as per the HTML definition
   const emailRegExp =
@@ -41,6 +52,7 @@ function validateEmail(label) {
     showError(error, input, "Please enter a valid email");
   }
 }
+
 function validatePhone(label) {
   const error = label.querySelector("div");
   const input = label.querySelector("input");
@@ -51,6 +63,7 @@ function validatePhone(label) {
     showError(error, input, "Please only use digits for your phone number");
   }
 }
+//This isnt pretty and doesnt need to be in one function
 function validatePassword(label1, label2) {
   const error1 = label1.querySelector("div");
   const input1 = label1.querySelector("input");
