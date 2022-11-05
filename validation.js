@@ -57,10 +57,10 @@ function validatePhone(label) {
   const error = label.querySelector("div");
   const input = label.querySelector("input");
 
-  const isValid = /^\d+$/.test(input.value);
+  const phonePattern = /^[+][0-9]{2}[\s][0-9]{4}[\s][0-9]{7}$/;
 
-  if (!isValid) {
-    showError(error, input, "Please only use digits for your phone number");
+  if (!(phonePattern.test(input.value))) {
+    showError(error, input, "Phone number has to match pattern:+xx xxxx xxxxxxx");
   }
 }
 //This isnt pretty and doesnt need to be in one function

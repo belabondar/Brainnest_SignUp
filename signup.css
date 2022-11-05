@@ -185,6 +185,7 @@ input {
   font-size: 20px;
 }
 
+
 input:focus {
   outline: none;
   border: 1px solid #4bb8d6;
@@ -193,4 +194,19 @@ input:focus {
 
 input.invalid {
   border: 1px solid red;
+}
+
+/* Input placeholder styling */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: lightgray;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: lightgray;
 }
