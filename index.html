@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./signup.css" />
+    <script src="./validation.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="left">
+        <div id="text">
+          <p>PARADISIAC ISLAND</p>
+        </div>
+        <p>Image from Moosa Haleem (https://unsplash.com/photos/BcqbKBVZ-Zk)</p>
+      </div>
+      <div id="right">
+        <form
+          action=""
+          id="form"
+          onsubmit="return validateForm()"
+          name="signup"
+        >
+          <div id="top">
+            <p>
+              Do you want to get the best trip on paradisiac island? Sign up
+              <em>now</em> to get started. <br />
+              <br />
+              You know you want to.
+            </p>
+          </div>
+          <div id="input">
+            <p class="bold-text">Let's do this!</p>
+            <div id="input-fields">
+              <label for="first_name"
+                >First Name *<input type="text" id="first_name" />
+                <div class="error-message inactive"></div></label
+              ><label for="last_name"
+                >Last Name *<input type="text" id="last_name" />
+                <div class="error-message inactive"></div></label
+              ><label for="email"
+                >Email *<input type="text" id="email" />
+                <div class="error-message inactive"></div></label
+              ><label for="phone_number"
+                >Phone Number *<input type="text" id="phone_number" />
+                <div class="error-message inactive"></div></label
+              ><label for="password"
+                >Password *<input type="password" id="password" />
+                <div class="error-message inactive"></div></label
+              ><label for="confirm_password"
+                >Confirm Password *<input
+                  type="password"
+                  id="confirm_password" />
+                <div class="error-message inactive"></div
+              ></label>
+            </div>
+          </div>
+          <div id="bottom">
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="">Log in</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

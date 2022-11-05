@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --left_margin: 40px;
+  --green: #596d48;
+  --background: lightgray;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  width: fit-content();
+  height: fit-content();
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.error-message {
+  font-size: small;
+  text-transform: none;
+  color: red;
+}
+
+.inactive {
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
+.bold-text {
+  margin: 10px;
+  margin-left: var(--left_margin);
+  font-size: 32px;
+  font-weight: 500;
+}
+
+#left {
+  height: 100%;
+  background-image: url("https://source.unsplash.com/BcqbKBVZ-Zk");
+  background-size: cover;
+  position: relative;
+  min-width: 450px;
+
+  font-family: "Poor Story", cursive;
+}
+
+#left > div {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 200px;
+
+  position: relative;
+  top: 20%;
+}
+
+#left > div > p {
+  color: white;
+  line-height: 200px;
+  font-size: 50px;
+  text-align: center;
+}
+
+#left > p {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#right {
+  height: 100%;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+#right > form {
+  height: max(100vh, 600px);
+  display: grid;
+  grid-template-rows: fit-content() fit-content() minmax(200px, 1fr);
+  grid-template-columns: 100%;
+}
+
+#right #top {
+  min-height: 150px;
+
+  display: flex;
+  align-items: center; /* align vertical */
+}
+
+#right #top > p {
+  margin-left: var(--left_margin);
+  font-size: 28px;
+  width: 50%;
+  min-width: 500px;
+  font-weight: bold;
+}
+
+#right #bottom {
+  min-height: 150px;
+  padding: var(--left_margin);
+  min-width: 500px;
+}
+
+#right #bottom > button {
+  background-color: var(--green);
+  width: 300px;
+  aspect-ratio: 5;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 30px;
+}
+
+#right #bottom > p {
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+#right #input {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: normal;
+  padding: 10px;
+
+  box-shadow: 0px 3px 5px darkgrey;
+}
+
+#right #input > p {
+  min-width: 200px;
+}
+
+#right #input > #input-fields {
+  width: 66%;
+  min-width: 600px;
+  flex: 1;
+  margin: 10px 0px 15px 10px;
+  margin-left: var(--left_margin);
+
+  display: grid;
+  column-gap: 100px;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+label {
+  text-transform: uppercase;
+  align-items: center;
+
+  font-size: 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid #e5e7eb;
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #4bb8d6;
+  box-shadow: 0px 0px 5px rgba(65, 65, 65, 0.5);
+}
+
+input.invalid {
+  border: 1px solid red;
+}
