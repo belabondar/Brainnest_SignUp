@@ -57,9 +57,11 @@ function validatePhone(label) {
   const error = label.querySelector("div");
   const input = label.querySelector("input");
 
-  const phonePattern = /^[+][0-9]{2}[\s][0-9]{4}[\s][0-9]{7}$/;
+  const phoneNumber = input.value.replace(/ /g,'');
 
-  if (!(phonePattern.test(input.value))) {
+  const phonePattern = /^[+][0-9]{2}[0-9]{4}[0-9]{7}$/;
+
+  if (!(phonePattern.test(phoneNumber))) {
     showError(error, input, "Phone number has to match pattern:+xx xxxx xxxxxxx");
   }
 }
@@ -110,5 +112,21 @@ function resetAllErrors(labels) {
     const error = label.querySelector("div");
     const input = label.querySelector("input");
     resetError(error, input);
+  }
+}
+
+
+//Well this doenst work, wanted to make the phone number pretty
+function formatePhoneNumber() {
+  const form = document.getElementById("form");
+  const labels = form.querySelectorAll("label");
+  const phoneInput = labels[3];
+
+  let phoneNumber = phoneInput.value;
+
+  if (phoneNumber.length == 3 && /^[+][0-9]{2}/.test(phoneNumber)) {
+    phoneInput.value = phoneNumber + " ";
+  } else if (phoneNumber.length == 8 && /^[+][0-9]{2}[\s][0-9]{4}/.test(phoneNumber)) {
+    phoneInput.value = phoneNumber + " ";
   }
 }
